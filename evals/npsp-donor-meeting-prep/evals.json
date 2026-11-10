@@ -1,0 +1,16 @@
+{
+  "skill_name": "npsp-donor-meeting-prep",
+  "triggers": {
+    "should_trigger": [
+      "Prep me for my lunch with Priya and Sam Fixture on Thursday",
+      "I'm meeting a donor next week to ask for a major gift, can you brief me?",
+      "Brief me on the Testwell household before my call"
+    ],
+    "should_not_trigger": [
+      "Here are my notes from lunch with the Fixtures, write it up",
+      "Who should I focus on in my portfolio this month?",
+      "Prep me for my board meeting agenda"
+    ]
+  },
+  "evals": []
+}

@@ -1,0 +1,27 @@
+{
+  "name": "nonprofit-individual-giving",
+  "version": "0.1.0",
+  "description": "Skills for individual giving fundraisers at nonprofits using Salesforce NPSP, covering donor meeting prep and follow-up, thank-you notes, monthly pipeline review, and gift processing.",
+  "author": {
+    "name": "SFDO Community Sprints contributors"
+  },
+  "homepage": "https://github.com/SFDO-Community-Sprints/SF-community-skills/tree/main/plugins/nonprofit-individual-giving",
+  "repository": "https://github.com/SFDO-Community-Sprints/SF-community-skills",
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "nonprofit",
+    "fundraising",
+    "npsp",
+    "salesforce",
+    "individual giving",
+    "development"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Nonprofit Individual Giving",
+    "shortDescription": "Skills for individual giving fundraisers at nonprofits using Salesforce NPSP, covering donor meeting prep and follow-up, thank-you notes, monthly pipeline review, and gift processing.",
+    "developerName": "SFDO Community Sprints contributors",
+    "category": "Productivity",
+    "websiteURL": "https://github.com/SFDO-Community-Sprints/SF-community-skills/tree/main/plugins/nonprofit-individual-giving"
+  }
+}

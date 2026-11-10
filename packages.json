@@ -1,0 +1,123 @@
+{
+  "$comment": "Prefix registry. Every skill name starts with one of these prefixes. Add a package here before adding its first skill. sources lists the repos (one per namespace) that npm run docs:packages reads.",
+  "packages": [
+    {
+      "prefix": "npsp",
+      "name": "Nonprofit Success Pack",
+      "status": "active",
+      "repo": "https://github.com/SalesforceFoundation/NPSP",
+      "sources": [
+        {
+          "repo": "https://github.com/SalesforceFoundation/NPSP",
+          "namespace": "npsp"
+        },
+        {
+          "repo": "https://github.com/SalesforceFoundation/Contacts_and_Organizations",
+          "namespace": "npe01"
+        },
+        {
+          "repo": "https://github.com/SalesforceFoundation/Households",
+          "namespace": "npo02"
+        },
+        {
+          "repo": "https://github.com/SalesforceFoundation/Recurring_Donations",
+          "namespace": "npe03"
+        },
+        {
+          "repo": "https://github.com/SalesforceFoundation/Relationships",
+          "namespace": "npe4"
+        },
+        {
+          "repo": "https://github.com/SalesforceFoundation/Affiliations",
+          "namespace": "npe5"
+        }
+      ],
+      "orgSetup": "https://trailhead.salesforce.com/promo/orgs/learn-nonprofit-success-pack-on-trailhead",
+      "docs": []
+    },
+    {
+      "prefix": "eda",
+      "name": "Education Data Architecture",
+      "status": "active",
+      "repo": "https://github.com/SalesforceFoundation/EDA",
+      "sources": [
+        {
+          "repo": "https://github.com/SalesforceFoundation/EDA",
+          "namespace": "hed"
+        }
+      ],
+      "orgSetup": null,
+      "docs": []
+    },
+    {
+      "prefix": "pmm",
+      "name": "Program Management Module",
+      "status": "active",
+      "repo": "https://github.com/SalesforceFoundation/PMM",
+      "sources": [
+        {
+          "repo": "https://github.com/SalesforceFoundation/PMM",
+          "namespace": "pmdm"
+        }
+      ],
+      "orgSetup": null,
+      "docs": []
+    },
+    {
+      "prefix": "v4s",
+      "name": "Volunteers for Salesforce",
+      "status": "active",
+      "repo": "https://github.com/SalesforceFoundation/Volunteers-for-Salesforce",
+      "sources": [
+        {
+          "repo": "https://github.com/SalesforceFoundation/Volunteers-for-Salesforce",
+          "namespace": "GW_Volunteers"
+        }
+      ],
+      "orgSetup": null,
+      "docs": []
+    },
+    {
+      "prefix": "mem",
+      "name": "Membership Essentials",
+      "status": "active",
+      "repo": "https://github.com/SFDO-Community-Sprints/Membership-Essentials-App",
+      "sources": [
+        {
+          "repo": "https://github.com/SFDO-Community-Sprints/Membership-Essentials-App",
+          "namespace": null
+        }
+      ],
+      "orgSetup": null,
+      "docs": []
+    },
+    {
+      "prefix": "ggk",
+      "name": "Grants Content Kit (Grant Guides)",
+      "status": "active",
+      "repo": "https://github.com/SFDO-Community/GrantGuides",
+      "sources": [
+        {
+          "repo": "https://github.com/SFDO-Community/GrantGuides",
+          "namespace": "GCKit"
+        }
+      ],
+      "orgSetup": null,
+      "docs": []
+    },
+    {
+      "prefix": "ofm",
+      "name": "Outbound Funds Module",
+      "status": "candidate",
+      "repo": "https://github.com/SalesforceFoundation/OutboundFundsModule",
+      "sources": [
+        {
+          "repo": "https://github.com/SalesforceFoundation/OutboundFundsModule",
+          "namespace": "outfunds"
+        }
+      ],
+      "orgSetup": null,
+      "docs": []
+    }
+  ]
+}

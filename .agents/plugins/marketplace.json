@@ -1,0 +1,20 @@
+{
+  "name": "sf-community-skills",
+  "interface": {
+    "displayName": "Salesforce Nonprofit Community Skills"
+  },
+  "plugins": [
+    {
+      "name": "nonprofit-individual-giving",
+      "source": {
+        "source": "local",
+        "path": "./plugins/nonprofit-individual-giving"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

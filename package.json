@@ -1,0 +1,32 @@
+{
+  "name": "sf-community-skills",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Community-maintained agent skills for Salesforce open-source nonprofit packages (NPSP, EDA, PMM, V4S, and more).",
+  "author": "SFDO Community Sprints contributors",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SFDO-Community-Sprints/SF-community-skills"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "new": "node scripts/new-skill.mjs",
+    "validate": "node scripts/validate.mjs",
+    "build": "node scripts/build.mjs",
+    "build:check": "node scripts/build.mjs --check",
+    "export": "node scripts/export.mjs",
+    "eval": "node scripts/eval.mjs",
+    "docs:packages": "node scripts/sync-package-docs.mjs",
+    "test": "node --test \"scripts/test/*.test.mjs\""
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.8.0",
+    "fflate": "^0.8.3",
+    "openai": "^7.55.0",
+    "yaml": "^2.9.1"
+  }
+}

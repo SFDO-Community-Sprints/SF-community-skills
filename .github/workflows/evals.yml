@@ -1,0 +1,44 @@
+name: Evals
+
+# A maintainer adds the `run-evals` label to run trigger and behavioral evals for the skills a PR changes.
+# Repository secrets are not available to PRs from forks; run evals locally for those.
+on:
+  pull_request:
+    types: [labeled, synchronize]
+
+jobs:
+  evals:
+    if: contains(github.event.pull_request.labels.*.name, 'run-evals')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Find changed skills
+        id: changed
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          skills=$(git diff --name-only "origin/$BASE_REF...HEAD" -- skills evals \
+            | grep -E '^(skills|evals)/[^/]+/' | cut -d/ -f2 | grep -v '^fixtures$' | sort -u \
+            | while read -r s; do [ -d "skills/$s" ] && echo "$s"; done | tr '\n' ' ')
+          echo "skills=$skills" >> "$GITHUB_OUTPUT"
+          echo "Changed skills: ${skills:-none}"
+      - name: Run evals
+        if: steps.changed.outputs.skills != ''
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SKILLS: ${{ steps.changed.outputs.skills }}
+        # Word splitting on $SKILLS is intended: one argument per skill.
+        run: npm run eval -- --triggers $SKILLS
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-results
+          path: eval-results/
+          if-no-files-found: ignore

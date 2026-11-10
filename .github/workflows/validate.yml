@@ -1,0 +1,35 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validate skills and plugins
+        run: npm run validate
+      - name: Check generated files are up to date
+        run: npm run build:check
+      - name: Test tooling
+        run: npm test
+
+  skills-ref:
+    # Cross-check against the Agent Skills reference validator (agentskills.io).
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: skills-ref validate
+        run: |
+          for dir in skills/*/; do
+            uvx --from "git+https://github.com/agentskills/agentskills#subdirectory=skills-ref" skills-ref validate "$dir"
+          done

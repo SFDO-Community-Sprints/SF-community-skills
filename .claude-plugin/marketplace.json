@@ -1,0 +1,28 @@
+{
+  "name": "sf-community-skills",
+  "owner": {
+    "name": "SFDO Community Sprints contributors"
+  },
+  "metadata": {
+    "description": "Community-maintained agent skills for Salesforce open-source nonprofit packages (NPSP, EDA, PMM, V4S, and more).",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "nonprofit-individual-giving",
+      "source": "./plugins/nonprofit-individual-giving",
+      "description": "Skills for individual giving fundraisers at nonprofits using Salesforce NPSP, covering donor meeting prep and follow-up, thank-you notes, monthly pipeline review, and gift processing.",
+      "version": "0.1.0",
+      "category": "productivity",
+      "keywords": [
+        "nonprofit",
+        "fundraising",
+        "npsp",
+        "salesforce",
+        "individual giving",
+        "development"
+      ],
+      "license": "BSD-3-Clause"
+    }
+  ]
+}

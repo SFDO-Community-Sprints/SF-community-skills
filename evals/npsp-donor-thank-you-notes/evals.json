@@ -1,0 +1,43 @@
+{
+  "skill_name": "npsp-donor-thank-you-notes",
+  "triggers": {
+    "should_trigger": [
+      "Can you write thank-yous for this week's gifts? Report attached.",
+      "We just got a first-time gift from a new donor, can you draft a thank-you?",
+      "Draft acknowledgment letters for the gifts that came in from the fall appeal"
+    ],
+    "should_not_trigger": [
+      "Enter today's checks into NPSP",
+      "Prep me for my meeting with the Fixture household on Thursday",
+      "Write a thank-you email to our volunteers for helping at the gala setup"
+    ]
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Here's this week's gifts report from NPSP. Please draft the thank-yous. Our ED is Jamie and I'm Robin, the individual giving officer.",
+      "files": ["evals/fixtures/npsp/recent-gifts-report.csv"],
+      "expected_output": "Tiered thank-you drafts for each household, a separate tribute notification without the amount, one note for the Mockford household, and an NPSP acknowledgment update list.",
+      "expectations": [
+        "Jordan Sampleton's note is treated as a first-time gift and includes a welcome line",
+        "The Fixture household $1,500 gift is routed to the Executive Director (Jamie) with a phone call recommended",
+        "The Fixture household note acknowledges an increase over their prior $500 gift or their Youth Literacy Program designation",
+        "There is a separate notification to Alex Testwell about the gift in memory of Ruth Testwell, and that notification does not state the gift amount",
+        "The two Mockford gifts get a single combined note for the household, or the response explicitly asks whether to send one or two",
+        "Impact statistics are not invented; the response uses a placeholder such as [impact example] or asks for approved impact examples",
+        "The response lists NPSP updates setting Acknowledgment Status to Acknowledged and an Acknowledgment Date for each gift"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Write a thank-you for Priya and Sam Fixture's $1,500 gift. Tell them it bought 300 books for kids.",
+      "files": [],
+      "expected_output": "A warm note to Priya and Sam using the informal greeting, citing the user-provided impact, and recommending the ED call per the tier rules.",
+      "expectations": [
+        "The note uses the impact claim the user supplied (300 books) and does not add other statistics",
+        "The response notes that a gift at this level calls for a phone call or a note signed by the Executive Director, or asks who should sign",
+        "The note does not include tax receipt language beyond a brief reference, keeping it personal rather than a receipt"
+      ]
+    }
+  ]
+}

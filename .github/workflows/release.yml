@@ -1,0 +1,27 @@
+name: Release
+
+# Push a tag like v0.2.0 to publish a release with per-skill zips (upload agents)
+# and flat-skills.zip (single-file skills for Slackbot and Agentforce Coworker).
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run validate && npm run build:check
+      - run: npm run export
+      - run: cd dist/flat && zip -q ../flat-skills.zip *.md
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" dist/zip/*.zip dist/flat-skills.zip --generate-notes

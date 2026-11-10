@@ -1,0 +1,16 @@
+{
+  "skill_name": "npsp-monthly-pipeline-review",
+  "triggers": {
+    "should_trigger": [
+      "Review my pipeline, export attached",
+      "Who should I focus on this month?",
+      "Help me prep for my pipeline meeting with my director"
+    ],
+    "should_not_trigger": [
+      "Process this online giving payout",
+      "Brief me on the Sampleton household",
+      "Review our sales pipeline for the gift shop"
+    ]
+  },
+  "evals": []
+}

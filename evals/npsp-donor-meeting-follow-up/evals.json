@@ -1,0 +1,16 @@
+{
+  "skill_name": "npsp-donor-meeting-follow-up",
+  "triggers": {
+    "should_trigger": [
+      "Here are my notes from lunch with Priya and Sam, can you write it up?",
+      "Log this donor meeting and draft a follow-up email",
+      "I just met with a donor, here's my voice memo transcript"
+    ],
+    "should_not_trigger": [
+      "Prep me for my meeting with the Fixture household next week",
+      "Write thank-you notes for this week's gifts",
+      "Summarize my notes from the staff meeting"
+    ]
+  },
+  "evals": []
+}

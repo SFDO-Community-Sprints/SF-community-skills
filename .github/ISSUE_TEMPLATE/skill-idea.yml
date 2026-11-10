@@ -1,0 +1,43 @@
+name: Skill idea
+description: Propose a new skill for one of the supported packages
+labels: [skill-idea]
+body:
+  - type: dropdown
+    id: package
+    attributes:
+      label: Package
+      options:
+        - Nonprofit Success Pack (npsp)
+        - Education Data Architecture (eda)
+        - Program Management Module (pmm)
+        - Volunteers for Salesforce (v4s)
+        - Membership Essentials (mem)
+        - Grants Content Kit (ggk)
+        - Outbound Funds Module (ofm, candidate)
+        - Other / multiple
+    validations:
+      required: true
+  - type: input
+    id: persona
+    attributes:
+      label: Who would use it?
+      placeholder: e.g. Volunteer coordinator, program manager, development director
+    validations:
+      required: true
+  - type: textarea
+    id: job
+    attributes:
+      label: What job does it do?
+      description: When do people do this task, what do they start with, and what do they need at the end?
+    validations:
+      required: true
+  - type: textarea
+    id: phrases
+    attributes:
+      label: How would someone ask for it?
+      description: A few requests in the words a real user would use.
+  - type: textarea
+    id: records
+    attributes:
+      label: Records and fields involved
+      description: Optional. Objects, fields, reports, or exports the skill would use.

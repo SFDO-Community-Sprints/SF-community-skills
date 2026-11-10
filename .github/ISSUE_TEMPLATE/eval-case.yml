@@ -1,0 +1,43 @@
+name: Eval case
+description: Describe a test case for a skill in plain language. No coding needed.
+labels: [eval-case]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us test skills with realistic situations. Describe what someone would ask, what data they'd share, and what a good answer must include.
+        **Do not include real donor, client, student, or volunteer information.** Use made-up names.
+  - type: input
+    id: skill
+    attributes:
+      label: Skill name
+      placeholder: e.g. npsp-donor-thank-you-notes
+    validations:
+      required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: What the user asks
+      placeholder: "Can you write thank-yous for this week's gifts? Here's the report."
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: Data they share (made up)
+      description: Paste a small, fictional example of the report, notes, or record. Or name an existing fixture in evals/fixtures.
+  - type: textarea
+    id: must
+    attributes:
+      label: A good answer must...
+      description: One item per line. Make each one something a reviewer can check by reading the answer.
+      placeholder: |
+        - Send a separate note to the tribute notification contact, without the gift amount
+        - Not invent any impact statistics
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why this case matters
+      description: Optional. The real-world situation or common mistake this tests.

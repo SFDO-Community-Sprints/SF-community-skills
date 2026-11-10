@@ -1,0 +1,46 @@
+{
+  "skill_name": "npsp-gift-processing",
+  "triggers": {
+    "should_trigger": [
+      "Help me process today's checks, deposit slip attached",
+      "How do I enter a DAF gift in NPSP?",
+      "We got a stock gift, how should it be recorded?"
+    ],
+    "should_not_trigger": [
+      "Draft thank-you notes for this week's donors",
+      "Review my pipeline for this month",
+      "Help me reconcile our credit card statement for office supplies"
+    ]
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Can you help me get today's deposit into NPSP Gift Entry? Details attached.",
+      "files": ["evals/fixtures/npsp/check-batch.md"],
+      "expected_output": "Batch setup, per-gift entry guidance with correct donor of record and soft credits, special handling for the DAF, pledge, match, tribute, and stock, a request for the Campaign and GAU list, and a batch summary that reconciles to $9,375.",
+      "expectations": [
+        "The DAF grant's donor of record is the fund (Example Community Giving Fund) and Priya Fixture receives a soft credit",
+        "The DAF gift is flagged as receiving no tax receipt, or a thank-you without receipt language",
+        "The Testwell $500 check is applied as a payment to the existing open pledge rather than creating a new Opportunity",
+        "The matching gift's donor of record is Mockford Industries with a soft credit to Casey Mockford",
+        "Lee Testwell's $25 gift is entered with tribute details: Tribute Type Memorial, honoree Ruth Testwell",
+        "Morgan Placeholder's $6,000 gift is flagged for the Development Director as over the $5,000 threshold",
+        "The batch count (6) and total ($9,375.00) are reconciled against the deposit slip and reported as matching",
+        "The stock gift is handled outside the check batch, valued at $3,000 (20 shares at the $150.00 high-low average) for internal records, and the receipt describes shares without a dollar value",
+        "The response asks for the org's Campaign and GAU list, or uses clearly marked placeholders, instead of inventing codes",
+        "The response tells the user to search NPSP for existing Contacts before creating any new ones"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "We got a $1,000 check from a donor-advised fund at Example Community Giving Fund, recommended by Jordan Sampleton. How do I enter it and does it get a receipt?",
+      "files": [],
+      "expected_output": "Donor of record is the DAF sponsor, soft credit to Jordan, no tax receipt, send a thank-you without receipt language.",
+      "expectations": [
+        "The donor of record is Example Community Giving Fund (the DAF sponsor), not Jordan Sampleton",
+        "Jordan Sampleton receives a soft credit",
+        "The response says no tax receipt should be issued and suggests a thank-you without receipt language"
+      ]
+    }
+  ]
+}
