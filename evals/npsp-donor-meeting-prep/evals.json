@@ -12,5 +12,37 @@
       "Prep me for my board meeting agenda"
     ]
   },
-  "evals": []
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Prep me for lunch with Priya and Sam Fixture on November 19. I plan to make the ask for their major gift. Their NPSP record is attached.",
+      "files": [
+        "evals/fixtures/npsp/household-record.md"
+      ],
+      "expected_output": "A one-page brief with an accurate giving summary, the open outcomes-report promise, relationships including the matching gift employer, an ask recommendation that reconciles the default rule with the open $25,000 Opportunity, talking points, and questions.",
+      "expectations": [
+        "The giving summary states lifetime giving of $9,850 across 7 gifts since 2019",
+        "The brief identifies the largest gift as $2,500 and the last gift as $1,500 on 2026-11-04 to the Youth Literacy Program",
+        "The brief flags the outcomes report promised on the 2026-10-28 call as an open commitment to deliver before or at the meeting",
+        "The brief uses the household greeting \"Priya and Sam\" or Priya as the preferred name",
+        "The brief notes Sam Fixture's role on the Youth Literacy Advisory Council",
+        "The brief notes Priya's matching gift employer (Example Health Partners) as an opportunity",
+        "The suggested ask states its basis, and addresses the gap between the default range (about $3,750 to $5,000, from 1.5x to 2x the $2,500 largest gift) and the open $25,000 major gift Opportunity",
+        "The response asks whether the org requires approval for asks above a set amount, or flags that the ask may need approval",
+        "The brief includes 3 to 5 questions to ask the donors",
+        "The brief does not invent program outcomes or statistics; anything not in the record is marked as unknown or left as a placeholder"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I have coffee with Jordan Sampleton on Friday. Can you brief me?",
+      "files": [],
+      "expected_output": "Asks for the NPSP Contact record and Opportunity history (or a connection), and does not fabricate any giving history.",
+      "expectations": [
+        "The response asks the user to paste or export Jordan Sampleton's NPSP Contact or Household record and Opportunity history, or to connect Salesforce",
+        "The response does not state any giving amounts, gift dates, or relationship facts about Jordan Sampleton as if they were known",
+        "The response asks about or notes the meeting purpose (for example cultivation, solicitation, or stewardship)"
+      ]
+    }
+  ]
 }

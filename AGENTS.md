@@ -35,6 +35,7 @@ npm test                          tooling tests
 npm run export                    dist/zip/*.zip and dist/flat/*.md
 npm run eval -- --triggers        routing check across all skill descriptions (needs an API key)
 npm run eval -- <skill>           behavioral eval, with vs. without the skill (needs an API key)
+                                  add --provider claude-cli to use a Claude Code login instead of an API key
 npm run docs:packages [-- <prefix>]  regenerate package data-model docs from source repos
 ```
 

@@ -4,14 +4,18 @@
 //   npm run eval -- <skill-name> [...]         behavioral check: with-skill vs. no-skill, graded by an LLM judge
 //
 // Options:
-//   --provider anthropic|openai   (default: anthropic; needs ANTHROPIC_API_KEY or OPENAI_API_KEY)
-//   --model <id>                  model that runs the cases (default: claude-sonnet-5-5 for anthropic; OPENAI_MODEL for openai)
+//   --provider anthropic|openai|claude-cli
+//                                 anthropic (default) needs ANTHROPIC_API_KEY; openai needs OPENAI_API_KEY;
+//                                 claude-cli runs headless `claude -p` on your Claude Code login (e.g. a Pro/Max subscription)
+//   --model <id>                  model that runs the cases (default: claude-sonnet-5-5 for anthropic and claude-cli; OPENAI_MODEL for openai)
 //   --judge-model <id>            model that grades (default: same as --model)
 //   --no-baseline                 skip the no-skill run
 //
 // Results are written to eval-results/ (git-ignored).
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
+import { spawn } from 'node:child_process';
 import { ROOT, loadSkills, readJsonIfExists, isMain } from './lib/repo.mjs';
 
 function parseArgs(argv) {
@@ -72,7 +76,50 @@ export async function makeProvider(name) {
       },
     };
   }
-  throw new Error(`Unknown provider "${name}". Use anthropic or openai.`);
+  if (name === 'claude-cli') {
+    return {
+      defaultModel: 'claude-sonnet-5-5',
+      async complete({ model, system, user, schema }) {
+        const args = [
+          '-p',
+          '--model', model,
+          '--output-format', 'json',
+          // A bare model call: no tools, MCP servers, skills, settings, or saved session.
+          '--tools', '',
+          '--strict-mcp-config',
+          '--disable-slash-commands',
+          '--setting-sources', '',
+          '--no-session-persistence',
+          // Replace Claude Code's coding-agent prompt so the baseline is a plain assistant.
+          '--system-prompt', system ?? 'You are a helpful assistant.',
+          ...(schema ? ['--json-schema', JSON.stringify(schema)] : []),
+        ];
+        const result = JSON.parse(await runClaude(args, user));
+        if (result.is_error) throw new Error(`claude -p failed (${result.subtype}): ${result.result ?? ''}`);
+        return schema ? JSON.stringify(result.structured_output) : result.result;
+      },
+    };
+  }
+  throw new Error(`Unknown provider "${name}". Use anthropic, openai, or claude-cli.`);
+}
+
+// Runs the claude CLI with the prompt on stdin, from a temp dir so no project CLAUDE.md is picked up.
+function runClaude(args, input) {
+  return new Promise((resolve, reject) => {
+    const child = spawn('claude', args, { cwd: os.tmpdir(), stdio: ['pipe', 'pipe', 'pipe'] });
+    let stdout = '';
+    let stderr = '';
+    child.stdout.on('data', (d) => (stdout += d));
+    child.stderr.on('data', (d) => (stderr += d));
+    child.on('error', (err) =>
+      reject(err.code === 'ENOENT' ? new Error('claude CLI not found; install Claude Code to use --provider claude-cli') : err),
+    );
+    child.on('close', (code) => {
+      if (code === 0 || stdout.trim().startsWith('{')) resolve(stdout);
+      else reject(new Error(`claude -p exited with code ${code}: ${(stderr || stdout).trim().slice(0, 500)}`));
+    });
+    child.stdin.end(input);
+  });
 }
 
 // How the skill is presented to the model: the full SKILL.md, as an agent would load it.

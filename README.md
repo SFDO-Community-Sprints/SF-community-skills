@@ -79,7 +79,7 @@ Setup: install Node 22 or later, then run `npm install`.
 
 1. **Static checks:** `npm run validate` (spec and portability rules). This also runs in CI.
 2. **Trigger checks:** add `should_trigger` and `should_not_trigger` prompts to `evals/<name>/evals.json`, then run `npm run eval -- --triggers`.
-3. **Behavioral evals:** add cases with expectations, then run `npm run eval -- <name>`. This compares responses with and without the skill, graded by a model. Required before a skill is marked `stable`.
+3. **Behavioral evals:** add cases with expectations, then run `npm run eval -- <name>`. This compares responses with and without the skill, graded by a model. Required before a skill is marked `stable`. Add `--provider claude-cli` to run on your Claude subscription instead of an API key.
 4. **Real-agent testing:** set up a Salesforce org and try the skill in one or more agents, following [docs/testing](docs/testing/README.md).
 5. **Domain review:** a practitioner reviews the output using the checklist in the pull request template.
 

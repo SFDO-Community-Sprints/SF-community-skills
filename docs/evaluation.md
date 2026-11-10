@@ -59,7 +59,16 @@ The format matches the `evals.json` used by Anthropic's skill-creator skill, so 
 
 **Options:** `--provider openai --model <id>` runs against OpenAI instead of Anthropic (useful because ChatGPT is a target). `--judge-model` picks a different grader. `--no-baseline` halves the cost while iterating. Results are saved to `eval-results/` (git-ignored).
 
-**API keys:** set `ANTHROPIC_API_KEY` (or log in with `ant auth login`), or `OPENAI_API_KEY`. In CI, a maintainer adds the `run-evals` label to a PR to run evals for the skills it changes, using the repo's secret. That only works for branches in this repo, because GitHub doesn't share secrets with fork PRs. For fork PRs, a maintainer runs evals locally.
+**Running on a Claude subscription:** `--provider claude-cli` runs each call through headless Claude Code (`claude -p`) using your Claude Code login, so a Pro or Max subscription covers the cost and no API key is needed. Calls run with no tools, MCP servers, or settings, so results are comparable to the API providers. Runs count against your plan's usage limits.
+
+Organization-level instructions and managed settings on your Claude account still apply in `claude -p`. If your org has policies (for example, about personal information), they can change outputs and fail expectations that have nothing to do with the skill. Read the failure evidence before changing a skill, and use an API provider when you need a clean comparison.
+
+```
+npm run eval -- --triggers --provider claude-cli
+npm run eval -- npsp-gift-processing --provider claude-cli
+```
+
+**API keys:** for the API providers, set `ANTHROPIC_API_KEY` (or log in with `ant auth login`), or `OPENAI_API_KEY`. In CI, a maintainer adds the `run-evals` label to a PR to run evals for the skills it changes, using the repo's secret. That only works for branches in this repo, because GitHub doesn't share secrets with fork PRs. For fork PRs, a maintainer runs evals locally.
 
 ## Test data
 
