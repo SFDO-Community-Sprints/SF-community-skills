@@ -38,8 +38,11 @@ if (isMain(import.meta.url)) {
   const skills = loadSkills(ROOT).filter((s) => !s.error && (only.length === 0 || only.includes(s.dirName)));
   const zipDir = path.join(ROOT, 'dist', 'zip');
   const flatDir = path.join(ROOT, 'dist', 'flat');
-  fs.mkdirSync(zipDir, { recursive: true });
-  fs.mkdirSync(flatDir, { recursive: true });
+  // Start clean so renamed or deleted skills don't linger in a release.
+  for (const dir of [zipDir, flatDir]) {
+    fs.rmSync(dir, { recursive: true, force: true });
+    fs.mkdirSync(dir, { recursive: true });
+  }
   for (const skill of skills) {
     fs.writeFileSync(path.join(zipDir, `${skill.dirName}.zip`), zipSkill(skill));
     fs.writeFileSync(path.join(flatDir, `${skill.dirName}.md`), flattenSkill(skill));
