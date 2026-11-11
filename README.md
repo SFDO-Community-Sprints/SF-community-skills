@@ -11,7 +11,7 @@ Skills follow the [Agent Skills](https://agentskills.io) format and are written 
 <!-- BEGIN GENERATED packages-table -->
 | Prefix | Package | Status | Skills |
 |---|---|---|---|
-| `npsp` | [Nonprofit Success Pack](https://github.com/SalesforceFoundation/NPSP) | active | 5 |
+| `npsp` | [Nonprofit Success Pack](https://github.com/SalesforceFoundation/NPSP) | active | 6 |
 | `eda` | [Education Data Architecture](https://github.com/SalesforceFoundation/EDA) | active | 0 |
 | `pmm` | [Program Management Module](https://github.com/SalesforceFoundation/PMM) | active | 0 |
 | `v4s` | [Volunteers for Salesforce](https://github.com/SalesforceFoundation/Volunteers-for-Salesforce) | active | 0 |
@@ -20,7 +20,7 @@ Skills follow the [Agent Skills](https://agentskills.io) format and are written 
 | `ofm` | [Outbound Funds Module](https://github.com/SalesforceFoundation/OutboundFundsModule) | candidate | 0 |
 <!-- END GENERATED packages-table -->
 
-Every skill name starts with its package prefix, for example `npsp-gift-processing`.
+Every skill name starts with its package prefix, for example `npsp-log-gifts`.
 
 ## Plugins
 
@@ -29,7 +29,7 @@ Plugins group related skills for agents that support them (Claude and Codex). Th
 <!-- BEGIN GENERATED plugins-table -->
 | Plugin | Description | Skills |
 |---|---|---|
-| [nonprofit-individual-giving](plugins/nonprofit-individual-giving/README.md) | Skills for individual giving fundraisers at nonprofits using Salesforce NPSP, covering donor meeting prep and follow-up, thank-you notes, monthly pipeline review, and gift processing. | 5 |
+| [nonprofit-individual-giving](plugins/nonprofit-individual-giving/README.md) | Skills for individual giving fundraisers at nonprofits using Salesforce NPSP, covering donor meeting prep and follow-up, thank-you notes, monthly pipeline review, logging gifts, and lapsed donor outreach. | 6 |
 <!-- END GENERATED plugins-table -->
 
 ## Using the skills

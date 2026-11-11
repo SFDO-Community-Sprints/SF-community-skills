@@ -1,0 +1,46 @@
+{
+  "skill_name": "npsp-lapsed-donors-report-notes",
+  "triggers": {
+    "should_trigger": [
+      "Who gave last year but hasn't given yet this year? Draft some re-engagement emails",
+      "Pull a LYBUNT and SYBUNT report from NPSP",
+      "Draft letters to donors who haven't given in a couple of years"
+    ],
+    "should_not_trigger": [
+      "Draft thank-you notes for this week's gifts",
+      "Review my open pipeline for this month",
+      "Find volunteers who haven't signed up for a shift this year"
+    ]
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Today is 2026-11-10. Here's our NPSP donor export. Use calendar year for lapsed, Contact-level email, skip donors with no email, exclude anyone with an open opportunity, no other filters, and draft emails. I don't have a branding doc, so just use a plain signature.",
+      "files": ["evals/fixtures/npsp/lapsed-donors-contacts.csv"],
+      "expected_output": "Riley Fixture and Dana Sampleton as LYBUNT and Jamie Testwell as SYBUNT, sorted by last gift amount, with skipped counts by reason, three drafts with impact placeholders, and a closing question about where to save them.",
+      "expectations": [
+        "Riley Fixture and Dana Sampleton are labeled LYBUNT and Jamie Testwell is labeled SYBUNT",
+        "Robin Fixture is not included because they gave this year",
+        "Kai Mockford (Do Not Contact) and Pat Testwell (Deceased) do not appear in the table or the drafts",
+        "Quinn Sampleton is excluded because of the open opportunity",
+        "Sam Placeholder is skipped for missing email and no email address is made up for them",
+        "Skipped donors are reported as counts with a reason for each count",
+        "The table is sorted by last gift amount, highest first (Riley Fixture, Dana Sampleton, Jamie Testwell)",
+        "Each draft thanks the donor for their specific last gift amount and date",
+        "No programs, outcomes, or statistics are invented; an impact placeholder such as [add impact detail] is used",
+        "The response ends by asking where to save the drafts and does not claim anything was sent"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Can you find our lapsed donors and draft some letters?",
+      "files": [],
+      "expected_output": "With no data available, the assistant asks the user to paste a donor list and presents the run options, without inventing donors.",
+      "expectations": [
+        "The response asks the user to paste or provide a donor list including name, last gift date, last gift amount, and email or address",
+        "The response offers a choice of lapsed definition (calendar year, fiscal year, or rolling)",
+        "The response does not invent any donor names, gift amounts, or dates"
+      ]
+    }
+  ]
+}

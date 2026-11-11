@@ -66,10 +66,10 @@ test('behavioral eval runs with and without the skill and attaches fixture files
       return JSON.stringify({ results: Array.from({ length: n }, (_, i) => ({ expectation: `e${i}`, passed: user.includes('with-skill'), evidence: '' })) });
     },
   };
-  const skill = loadSkills().find((s) => s.dirName === 'npsp-gift-processing');
+  const skill = loadSkills().find((s) => s.dirName === 'npsp-log-gifts');
   const result = await runBehavioral(stub, { model: 'stub', judgeModel: 'stub', baseline: true }, skill);
   const runs = calls.filter((c) => !c.schema);
-  assert.ok(runs.some((c) => c.system?.includes('<skill name="npsp-gift-processing">')));
+  assert.ok(runs.some((c) => c.system?.includes('<skill name="npsp-log-gifts">')));
   assert.ok(runs.some((c) => c.system === undefined));
   assert.ok(runs.some((c) => c.user.includes('<attached_file name="check-batch.md">')));
   const [with_, total] = result.report.with_skill.split('/').map(Number);

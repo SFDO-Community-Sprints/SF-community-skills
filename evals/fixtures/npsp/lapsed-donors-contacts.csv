@@ -1,0 +1,9 @@
+Contact Name,Salutation,Email,Mailing Street,Mailing City,Mailing State,Mailing Postal Code,Last Gift Date,Last Gift Amount,Total Gifts,Total Number of Gifts,Total Gifts This Year,Total Gifts Last Year,Total Gifts Two Years Ago,Last Gift Campaign,Do Not Contact,Deceased,Open Opportunity,Contact Owner
+Dana Sampleton,Ms.,dana.sampleton@example.org,12 Example Ave,Springfield,IL,62701,2025-12-15,500.00,2400.00,6,0.00,500.00,400.00,Year-End Appeal 2025,false,false,No,Fundraiser A
+Robin Fixture,Mr.,robin.fixture@example.org,40 Sample Rd,Springfield,IL,62702,2026-03-02,250.00,1250.00,5,250.00,250.00,250.00,Spring Appeal 2026,false,false,No,Fundraiser A
+Kai Mockford,Mx.,kai.mockford@example.org,7 Test Ln,Springfield,IL,62703,2025-06-10,1000.00,3000.00,3,0.00,1000.00,1000.00,Gala 2025,true,false,No,Fundraiser B
+Pat Testwell,Mrs.,pat.testwell@example.org,9 Mock St,Springfield,IL,62704,2024-11-20,100.00,600.00,6,0.00,0.00,100.00,Year-End Appeal 2024,false,true,No,Fundraiser A
+Sam Placeholder,Mr.,,15 Fixture Ct,Springfield,IL,62705,2023-05-01,75.00,225.00,3,0.00,0.00,0.00,,false,false,No,Fundraiser B
+Quinn Sampleton,Ms.,quinn.sampleton@example.org,12 Example Ave,Springfield,IL,62701,2025-09-30,150.00,450.00,3,0.00,150.00,150.00,Fall Appeal 2025,false,false,Yes (Major Gift ask $1000.00),Fundraiser A
+Jamie Testwell,Mr.,jamie.testwell@example.org,22 Mock St,Springfield,IL,62704,2022-12-01,50.00,150.00,3,0.00,0.00,0.00,Year-End Appeal 2022,false,false,No,Fundraiser B
+Riley Fixture,Dr.,riley.fixture@example.org,3 Sample Rd,Springfield,IL,62702,2025-02-14,2000.00,8000.00,4,0.00,2000.00,2000.00,Gala 2025,false,false,No,Fundraiser A

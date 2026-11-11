@@ -2,8 +2,8 @@
 # The .claude-plugin/, .codex-plugin/, and skills/ folders here are generated.
 name: nonprofit-individual-giving
 displayName: Nonprofit Individual Giving
-version: 0.1.0
-description: Skills for individual giving fundraisers at nonprofits using Salesforce NPSP, covering donor meeting prep and follow-up, thank-you notes, monthly pipeline review, and gift processing.
+version: 0.2.0
+description: Skills for individual giving fundraisers at nonprofits using Salesforce NPSP, covering donor meeting prep and follow-up, thank-you notes, monthly pipeline review, logging gifts, and lapsed donor outreach.
 category: Productivity
 keywords:
   - nonprofit
@@ -17,4 +17,5 @@ skills:
   - npsp-donor-meeting-follow-up
   - npsp-donor-thank-you-notes
   - npsp-monthly-pipeline-review
-  - npsp-gift-processing
+  - npsp-log-gifts
+  - npsp-lapsed-donors-report-notes

@@ -265,7 +265,9 @@ async function main() {
 
   const dir = path.join(ROOT, 'eval-results');
   fs.mkdirSync(dir, { recursive: true });
-  const file = path.join(dir, `${output.ranAt.replace(/[:.]/g, '-')}.json`);
+  // Name by run contents and PID so parallel runs don't overwrite each other.
+  const label = [...(opts.triggers ? ['triggers'] : []), ...opts.skills].join('+');
+  const file = path.join(dir, `${output.ranAt.replace(/[:.]/g, '-')}-${label}-${process.pid}.json`);
   fs.writeFileSync(file, `${JSON.stringify(output, null, 2)}\n`);
   console.log(`\nFull results: ${path.relative(ROOT, file)}`);
 }

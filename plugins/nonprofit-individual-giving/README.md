@@ -14,7 +14,8 @@ Skills for individual giving fundraisers at nonprofits using Salesforce Nonprofi
 | [npsp-donor-meeting-follow-up](../../skills/npsp-donor-meeting-follow-up/SKILL.md) | Nonprofit Success Pack | draft | 0.1.0 |
 | [npsp-donor-thank-you-notes](../../skills/npsp-donor-thank-you-notes/SKILL.md) | Nonprofit Success Pack | draft | 0.1.0 |
 | [npsp-monthly-pipeline-review](../../skills/npsp-monthly-pipeline-review/SKILL.md) | Nonprofit Success Pack | draft | 0.1.0 |
-| [npsp-gift-processing](../../skills/npsp-gift-processing/SKILL.md) | Nonprofit Success Pack | draft | 0.1.0 |
+| [npsp-log-gifts](../../skills/npsp-log-gifts/SKILL.md) | Nonprofit Success Pack | draft | 0.2.0 |
+| [npsp-lapsed-donors-report-notes](../../skills/npsp-lapsed-donors-report-notes/SKILL.md) | Nonprofit Success Pack | draft | 0.1.0 |
 <!-- END GENERATED skills-table -->
 
 ## What each skill produces
@@ -25,7 +26,8 @@ Skills for individual giving fundraisers at nonprofits using Salesforce Nonprofi
 | npsp-donor-meeting-follow-up | You just met with a donor | Contact report, follow-up email, NPSP update checklist |
 | npsp-donor-thank-you-notes | New gifts came in | Tiered, personalized thank-you drafts and acknowledgment updates |
 | npsp-monthly-pipeline-review | It's time for your monthly pipeline check | Pipeline summary, stalled list, priority actions |
-| npsp-gift-processing | You have checks, an online payout, or a special gift to enter | Step-by-step entry guide, coding checks, finance batch summary |
+| npsp-log-gifts | You have checks, a gift file, or pasted gifts to log | Parsed gift table, donor and Opportunity matching, a review before writing, NPSP records and payments, finance batch summary |
+| npsp-lapsed-donors-report-notes | You want to re-engage donors who haven't given recently | LYBUNT/SYBUNT report of donors safe to contact, with optional email or letter drafts |
 
 ## How data gets in
 

@@ -4,7 +4,7 @@
 
 ## Skills changed
 
-<!-- e.g. npsp-gift-processing (new), npsp-donor-thank-you-notes (updated, 0.1.0 → 0.2.0) -->
+<!-- e.g. npsp-log-gifts (new), npsp-donor-thank-you-notes (updated, 0.1.0 → 0.2.0) -->
 
 ## Checklist
 

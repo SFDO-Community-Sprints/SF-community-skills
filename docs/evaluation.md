@@ -65,7 +65,7 @@ Organization-level instructions and managed settings on your Claude account stil
 
 ```
 npm run eval -- --triggers --provider claude-cli
-npm run eval -- npsp-gift-processing --provider claude-cli
+npm run eval -- npsp-log-gifts --provider claude-cli
 ```
 
 **API keys:** for the API providers, set `ANTHROPIC_API_KEY` (or log in with `ant auth login`), or `OPENAI_API_KEY`. In CI, a maintainer adds the `run-evals` label to a PR to run evals for the skills it changes, using the repo's secret. That only works for branches in this repo, because GitHub doesn't share secrets with fork PRs. For fork PRs, a maintainer runs evals locally.
@@ -96,4 +96,4 @@ Every PR that adds or changes a skill needs a review from someone who knows the 
 
 ## 6. SkillsBench (optional)
 
-[SkillsBench](https://github.com/benchflow-ai/skillsbench) benchmarks skills with deterministic pytest verifiers in Docker. It doesn't suit prose outputs like thank-you notes, but it fits skills with verifiable outputs. For example, an `npsp-gift-processing` task could require a batch summary CSV whose totals and donor-of-record assignments are checked exactly. Contributing a task there is a good way to get broader visibility for a mature skill. Follow the SkillsBench contributing guide; nothing in this repo's CI depends on it.
+[SkillsBench](https://github.com/benchflow-ai/skillsbench) benchmarks skills with deterministic pytest verifiers in Docker. It doesn't suit prose outputs like thank-you notes, but it fits skills with verifiable outputs. For example, an `npsp-log-gifts` task could require a batch summary CSV whose totals and donor-of-record assignments are checked exactly. Contributing a task there is a good way to get broader visibility for a mature skill. Follow the SkillsBench contributing guide; nothing in this repo's CI depends on it.

@@ -1,0 +1,47 @@
+{
+  "skill_name": "npsp-log-gifts",
+  "triggers": {
+    "should_trigger": [
+      "Help me log today's checks into Salesforce, deposit slip attached",
+      "Here's a CSV of gifts from our event, can you get them into NPSP?",
+      "We got a DAF grant and a stock gift, can you enter them?"
+    ],
+    "should_not_trigger": [
+      "Draft thank-you notes for this week's donors",
+      "Review my pipeline for this month",
+      "Help me reconcile our credit card statement for office supplies"
+    ]
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Can you log today's deposit into NPSP? Details attached.",
+      "files": ["evals/fixtures/npsp/check-batch.md"],
+      "expected_output": "A numbered parsed gift table with Close Dates from the data, correct donor of record and soft credits for the special gifts, bundled opening questions, reconciliation to $9,375, and nothing written to Salesforce without a connection and approval.",
+      "expectations": [
+        "The response shows a numbered table of the parsed gifts that includes a Close Date column",
+        "No Close Date is set to a date that isn't in the data; gifts use the 2026-11-09 deposit date or are marked as missing a Close Date",
+        "The response states that nothing has been written to Salesforce yet",
+        "The DAF grant's donor of record is the fund (Example Community Giving Fund) and Priya Fixture receives a soft credit",
+        "The Testwell $500 check is applied to the existing open pledge rather than creating a new Opportunity",
+        "The matching gift's donor of record is Mockford Industries with a soft credit to Casey Mockford",
+        "Lee Testwell's $25 gift has Tribute Type Memorial with honoree Ruth Testwell",
+        "Morgan Placeholder's $6,000 gift is flagged for the Development Director as over the $5,000 threshold",
+        "The deposit's count (6) and total ($9,375.00) are reconciled and reported as matching, with the stock gift kept out of the deposit",
+        "The response asks for the Opportunity record type, Campaign, or GAU instead of inventing them"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Log this gift please: $250 from Jordan Sampleton, check #1188, for the Fall appeal.",
+      "files": [],
+      "expected_output": "A parsed gift with the Close Date marked missing and a question asking for it, payment method Check with reference 1188, and no record written.",
+      "expectations": [
+        "The Close Date is marked missing and the user is asked for it; today's date is not assumed",
+        "The payment method is Check with Check/Reference Number 1188",
+        "The response does not claim any record was created or updated in Salesforce",
+        "The response does not invent an address, email, or other donor details for Jordan Sampleton"
+      ]
+    }
+  ]
+}
