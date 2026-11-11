@@ -106,6 +106,38 @@
       "docs": []
     },
     {
+      "prefix": "dlrs",
+      "name": "Declarative Lookup Rollup Summaries (DLRS)",
+      "status": "active",
+      "repo": "https://github.com/SFDO-Community/declarative-lookup-rollup-summaries",
+      "sources": [
+        {
+          "repo": "https://github.com/SFDO-Community/declarative-lookup-rollup-summaries",
+          "namespace": "dlrs"
+        }
+      ],
+      "orgSetup": "https://install.salesforce.org/products/dlrs/latest",
+      "docs": [
+        "https://sfdo-community-sprints.github.io/DLRS-Documentation/"
+      ]
+    },
+    {
+      "prefix": "sea",
+      "name": "Summit Events App",
+      "status": "active",
+      "repo": "https://github.com/SFDO-Community/Summit-Events-App",
+      "sources": [
+        {
+          "repo": "https://github.com/SFDO-Community/Summit-Events-App",
+          "namespace": "summit"
+        }
+      ],
+      "orgSetup": "https://install.salesforce.org/products/SummitEventsApp/latest",
+      "docs": [
+        "https://sfdo-community-sprints.github.io/summit-events-app-documentation/"
+      ]
+    },
+    {
       "prefix": "ofm",
       "name": "Outbound Funds Module",
       "status": "candidate",

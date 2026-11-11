@@ -1,6 +1,6 @@
 # Salesforce Nonprofit Community Skills
 
-Community-maintained agent skills for the open-source Salesforce nonprofit and education packages: Nonprofit Success Pack, Education Data Architecture, Program Management Module, Volunteers for Salesforce, Membership Essentials, and the Grants Content Kit.
+Community-maintained agent skills for the open-source Salesforce packages used by nonprofits and education institutions: Nonprofit Success Pack, Education Data Architecture, Program Management Module, Volunteers for Salesforce, Membership Essentials, the Grants Content Kit, Declarative Lookup Rollup Summaries (DLRS), and the Summit Events App.
 
 Salesforce maintains [forcedotcom/sf-skills](https://github.com/forcedotcom/sf-skills) for its commercial products. Skills for these open-source packages live here instead, maintained by the community of open-source contributors.
 
@@ -17,6 +17,8 @@ Skills follow the [Agent Skills](https://agentskills.io) format and are written 
 | `v4s` | [Volunteers for Salesforce](https://github.com/SalesforceFoundation/Volunteers-for-Salesforce) | active | 0 |
 | `mem` | [Membership Essentials](https://github.com/SFDO-Community-Sprints/Membership-Essentials-App) | active | 0 |
 | `ggk` | [Grants Content Kit (Grant Guides)](https://github.com/SFDO-Community/GrantGuides) | active | 0 |
+| `dlrs` | [Declarative Lookup Rollup Summaries (DLRS)](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries) | active | 0 |
+| `sea` | [Summit Events App](https://github.com/SFDO-Community/Summit-Events-App) | active | 0 |
 | `ofm` | [Outbound Funds Module](https://github.com/SalesforceFoundation/OutboundFundsModule) | candidate | 0 |
 <!-- END GENERATED packages-table -->
 

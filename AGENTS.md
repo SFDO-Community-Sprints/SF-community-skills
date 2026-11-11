@@ -4,7 +4,7 @@ Guidance for coding agents (and people) contributing to this repo. Read this bef
 
 ## What this repo is
 
-A community-maintained collection of [Agent Skills](https://agentskills.io) for the open-source Salesforce nonprofit and education packages. Skills are consumed by several agents with different capabilities, so portability is the main design constraint.
+A community-maintained collection of [Agent Skills](https://agentskills.io) for the open-source Salesforce packages used by nonprofits and education institutions, including community tools such as DLRS and the Summit Events App. Skills are consumed by several agents with different capabilities, so portability is the main design constraint.
 
 | Agent | What it accepts |
 |---|---|
@@ -45,7 +45,7 @@ After changing anything under `skills/`, `plugins/`, or `packages.json`, run `np
 
 **Naming**
 - `<prefix>-<topic>` in lowercase kebab-case, max 64 characters, matching the folder name.
-- The prefix must be registered in `packages.json`: `npsp`, `eda`, `pmm`, `v4s`, `mem`, `ggk` (active), `ofm` (candidate).
+- The prefix must be registered in `packages.json`: `npsp`, `eda`, `pmm`, `v4s`, `mem`, `ggk`, `dlrs`, `sea` (active), `ofm` (candidate).
 - A skill that spans packages takes the prefix of the package it depends on most, and lists every package in `metadata.packages`.
 - To add a package, add it to `packages.json` (with `sources` for each namespace) and create `docs/packages/<prefix>/README.md`.
 
@@ -86,6 +86,8 @@ Before writing or reviewing a skill for a package, read:
 3. The source repos listed in `packages.json` when you need more (Apex behavior, triggers, settings). Object metadata is under `force-app/**/objects/` (SFDX format) or `src/objects/*.object` (legacy format, e.g. V4S).
 
 NPSP spans several namespaces from separate repos: `npsp`, `npe01` (contacts and payments), `npo02` (households and rollups), `npe03` (recurring donations), `npe4` (relationships), and `npe5` (affiliations).
+
+Some namespaces differ from the skill prefix: the Summit Events App (`sea`) uses `summit`, Grants Content Kit (`ggk`) uses `GCKit`, and V4S (`v4s`) uses `GW_Volunteers`.
 
 ## Evals
 

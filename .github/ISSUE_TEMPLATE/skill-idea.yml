@@ -13,6 +13,8 @@ body:
         - Volunteers for Salesforce (v4s)
         - Membership Essentials (mem)
         - Grants Content Kit (ggk)
+        - Declarative Lookup Rollup Summaries (dlrs)
+        - Summit Events App (sea)
         - Outbound Funds Module (ofm, candidate)
         - Other / multiple
     validations:

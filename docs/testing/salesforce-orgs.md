@@ -2,7 +2,7 @@
 
 Use a free Developer Edition or trial org with the package installed. Never test with a production org or real constituent data.
 
-_Last verified: 2026-11-10_
+_Last verified: 2026-11-11_
 
 ## Nonprofit Success Pack (NPSP)
 
@@ -23,6 +23,8 @@ _Last verified: 2026-11-10_
 | Volunteers for Salesforce (V4S) | TBD, contributions welcome |
 | Membership Essentials | TBD, contributions welcome |
 | Grants Content Kit | TBD, contributions welcome |
+| Declarative Lookup Rollup Summaries (DLRS) | Sign up for a free [Developer Edition org](https://developer.salesforce.com/signup), then install DLRS from https://install.salesforce.org/products/dlrs/latest. Pair it with the NPSP org above to test rollups on NPSP objects. |
+| Summit Events App | Sign up for a free [Developer Edition org](https://developer.salesforce.com/signup), then install from https://install.salesforce.org/products/SummitEventsApp/latest. Public registration pages also need a Salesforce Site; follow the [package documentation](https://sfdo-community-sprints.github.io/summit-events-app-documentation/). |
 
 When you add setup steps for a package, also set `orgSetup` for it in `packages.json`.
 
